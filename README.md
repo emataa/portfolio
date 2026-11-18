@@ -1,4 +1,4 @@
-# Ken Emata — Portfolio
+# My Portfolio
 
 Personal portfolio built with HTML, CSS, and JavaScript.
 
