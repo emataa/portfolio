@@ -404,7 +404,10 @@
     });
   });
 
-  load(ROMS.invaders);
+  const initialKey =
+    document.querySelector("[data-rom].is-active")?.getAttribute("data-rom") ||
+    "invaders";
+  load(ROMS[initialKey] || ROMS.invaders);
   setRunning(true);
   render();
   telemetry();
