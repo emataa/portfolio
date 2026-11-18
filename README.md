@@ -1,6 +1,6 @@
 # Ken Emata — Portfolio
 
-Personal portfolio built with plain HTML, CSS, and JavaScript.
+Personal portfolio built with HTML, CSS, and JavaScript.
 
 **Live:** https://emataa.github.io/portfolio
 
