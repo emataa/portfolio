@@ -190,7 +190,7 @@
     dt: 0x1b,
     op: 0,
   };
-  let rom = ROMS.pong;
+  let rom = ROMS.invaders;
 
   const load = (r) => {
     rom = r;
@@ -398,13 +398,13 @@
     btn.addEventListener("click", () => {
       const key = btn.getAttribute("data-rom");
       romBtns.forEach((b) => b.classList.toggle("is-active", b === btn));
-      load(ROMS[key] || ROMS.pong);
+      load(ROMS[key] || ROMS.invaders);
       render();
       telemetry();
     });
   });
 
-  load(ROMS.pong);
+  load(ROMS.invaders);
   setRunning(true);
   render();
   telemetry();
