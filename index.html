@@ -3,14 +3,44 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ken Emata</title>
-    <meta name="description" content="Ken Emata - selected work." />
+    <title>Ken Emata // systems & software</title>
+    <meta
+      name="description"
+      content="Ken Emata - systems & software portfolio."
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ken Emata // systems &amp; software" />
+    <meta
+      property="og:description"
+      content="Fourth-year CS student at SFU. Systems programming, emulators, security, and full-stack projects."
+    />
+    <meta property="og:url" content="https://kenemata.com/" />
+    <meta
+      property="og:image"
+      content="https://kenemata.com/assets/og-image.png"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ken Emata // systems &amp; software" />
+    <meta
+      name="twitter:description"
+      content="Fourth-year CS student at SFU. Systems programming, emulators, security, and full-stack projects."
+    />
+    <meta
+      name="twitter:image"
+      content="https://kenemata.com/assets/og-image.png"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header class="site-header" id="siteHeader">
       <div class="container header-inner">
-        <a href="#top" class="brand">ken emata</a>
+        <a href="#top" class="brand">
+          <strong>Ken Emata</strong> <span>// systems & software</span>
+        </a>
 
         <button
           class="nav-toggle"
@@ -22,294 +52,397 @@
         >
           <span></span><span></span><span></span>
         </button>
-      </div>
 
-      <nav class="site-nav" id="primary-nav" aria-label="Primary">
-        <ul>
-          <li><a href="#work" data-nav>Work</a></li>
-          <li><a href="#experience" data-nav>Experience</a></li>
-          <li><a href="#about" data-nav>About</a></li>
-          <li><a href="#contact" data-nav>Contact</a></li>
-        </ul>
-      </nav>
+        <nav class="site-nav" id="primary-nav" aria-label="Primary">
+          <ul>
+            <li><a href="#work" data-nav>Work</a></li>
+            <li><a href="#experience" data-nav>Experience</a></li>
+            <li><a href="#about" data-nav>About</a></li>
+            <li><a href="#contact" data-nav>Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main id="top" class="container">
       <!-- ============ HERO ============ -->
-      <!-- TODO: replace name, role/location, claim -->
       <section class="hero reveal" data-reveal>
-        <p class="eyebrow" data-reveal-child>Developer & CS Student</p>
-        <h1 class="hero-name" data-reveal-child>Ken Emata</h1>
-        <p class="hero-location" data-reveal-child>Vancouver, BC</p>
-        <p class="hero-claim" data-reveal-child>
-          Selected work, 2022 - present.
-        </p>
-        <div class="hero-actions" data-reveal-child>
-          <a class="btn btn-primary" href="#work">View Work</a>
-          <a
-            class="btn btn-ghost"
-            href="assets/Kenneth Emata Resume.pdf"
-            target="_blank"
-            rel="noopener"
-            >Resume</a
-          >
-          <a class="btn btn-ghost" href="#contact">Get in Touch</a>
+        <!-- Left Column -->
+        <div class="hero-intro">
+          <div class="status-badge" data-reveal-child>
+            <span class="status-dot"></span>
+            <span>SFU CS · Vancouver, BC</span>
+          </div>
+
+          <p class="eyebrow" data-reveal-child>SOFTWARE DEVELOPER</p>
+          <h1 class="hero-name" data-reveal-child>Ken Emata</h1>
+
+          <p class="hero-claim" data-reveal-child>
+            Fourth-year Computer Science student at
+            <strong>Simon Fraser University</strong>. Interested in low-level
+            systems, operating systems, and software security.
+          </p>
+
+          <div class="hero-actions" data-reveal-child>
+            <a class="btn btn-primary" href="#work">Explore Work ↓</a>
+            <a
+              class="btn btn-ghost"
+              href="https://github.com/emataa"
+              target="_blank"
+              rel="noopener"
+              >GitHub ↗</a
+            >
+            <a
+              class="btn btn-ghost"
+              href="https://www.linkedin.com/in/kenemata/"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn ↗</a
+            >
+          </div>
+
+          <p class="hero-email" data-reveal-child>
+            <a href="mailto:kea31@sfu.ca">kea31@sfu.ca</a>
+          </p>
         </div>
-        <div class="scroll-cue" data-reveal-child aria-hidden="true">
-          <span></span>
-        </div>
+
+        <!-- Right Column: Kettle VM Window -->
+        <aside
+          class="kettle-window"
+          aria-label="Interactive CHIP-8 Emulator Preview"
+          data-reveal-child
+        >
+          <!-- Window Titlebar -->
+          <div class="kettle-titlebar">
+            <div class="window-dots" aria-hidden="true">
+              <span class="dot dot--red"></span>
+              <span class="dot dot--amber"></span>
+              <span class="dot dot--green"></span>
+            </div>
+            <span class="window-title">
+              kettle-vm — rustc 1.82.0 (64×32 monochrome)
+            </span>
+            <div class="window-tabs" role="tablist">
+              <button
+                type="button"
+                class="win-tab is-active"
+                data-tab-target="vm"
+              >
+                CHIP-8<br />VM
+              </button>
+              <button type="button" class="win-tab" data-tab-target="zsh">
+                zsh //<br />inspect
+              </button>
+            </div>
+          </div>
+
+          <!-- Tab 1: CHIP-8 VM View -->
+          <div class="kettle-pane is-active" id="pane-vm">
+            <div class="kettle-toolbar">
+              <div class="rom-group">
+                <span class="rom-label">ROM:</span>
+                <button
+                  type="button"
+                  class="rom-btn is-active"
+                  data-rom="invaders"
+                >
+                  invaders.ch8
+                </button>
+                <button type="button" class="rom-btn" data-rom="pong">
+                  pong.ch8
+                </button>
+                <button type="button" class="rom-btn" data-rom="maze">
+                  10print_maze.ch8
+                </button>
+              </div>
+              <div class="ctrl-group">
+                <button type="button" class="ctrl-btn" id="btn-toggle">
+                  ⏸ Pause
+                </button>
+                <button type="button" class="ctrl-btn" id="btn-step">
+                  ⏭ Step
+                </button>
+              </div>
+            </div>
+
+            <div class="kettle-body">
+              <div class="kettle-screen-wrap">
+                <canvas id="chip8-canvas" width="512" height="256"></canvas>
+                <span class="vram-tag">64×32 VRAM · 600Hz</span>
+              </div>
+
+              <div class="kettle-cpu">
+                <div class="cpu-head">
+                  <span>CPU STATE</span>
+                  <strong id="cpu-status" class="state-running">RUNNING</strong>
+                </div>
+                <div class="cpu-regs">
+                  <div>
+                    <span>PC:</span> <strong id="reg-pc">0x0200</strong>
+                  </div>
+                  <div><span>I:</span> <strong id="reg-i">0x0300</strong></div>
+                  <div><span>SP:</span> <strong id="reg-sp">0x02</strong></div>
+                  <div><span>DT:</span> <strong id="reg-dt">0x1B</strong></div>
+                  <div>
+                    <span>V0:</span>
+                    <strong id="reg-v0" class="hi">0x04</strong>
+                  </div>
+                  <div>
+                    <span>V1:</span>
+                    <strong id="reg-v1" class="hi">0x04</strong>
+                  </div>
+                </div>
+                <div class="cpu-disasm">
+                  <span>OP DISASM:</span>
+                  <strong id="reg-op">D018 // DRW V0, V1, 8</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2: zsh // inspect View -->
+          <div class="kettle-pane" id="pane-zsh" hidden>
+            <div class="zsh-terminal">
+              <p>
+                <span class="prompt">ken@sfu-cs</span>:<span class="path"
+                  >~/portfolio</span
+                >$ cargo test --workspace --release
+              </p>
+              <p class="dim">
+                Compiling kettle-core v0.1.0 (/home/ken/kettle/core)
+              </p>
+              <p class="dim">Finished release [optimized] target(s) in 0.42s</p>
+              <p class="ok">test cpu::opcodes_35_suite ... ok</p>
+              <p class="ok">test timers::hz_60_tick ... ok</p>
+              <p>
+                <span class="prompt">ken@sfu-cs</span>:<span class="path"
+                  >~/portfolio</span
+                >$ cat toolchain.toml
+              </p>
+              <pre>
+[systems]
+languages = ["Rust", "C", "C++", "Python", "TypeScript", "Java"]
+focus     = ["OS & Networking", "Security", "Testing", "Systems"]</pre
+              >
+            </div>
+          </div>
+
+          <div class="kettle-footer">
+            Web preview of <strong>kettle</strong> (CHIP-8 Emulator in Rust)
+            <a
+              href="https://github.com/emataa/kettle"
+              target="_blank"
+              rel="noopener"
+              >github.com/emataa/kettle ↗</a
+            >
+          </div>
+        </aside>
       </section>
 
-      <!-- ============ WORK ============ -->
+      <!-- ============ 01 WORK ============ -->
       <section id="work" class="section">
         <header class="section-head reveal" data-reveal>
-          <span class="section-num" data-reveal-child>01</span>
-          <h2 class="section-title" data-reveal-child>Work</h2>
-          <p class="section-blurb" data-reveal-child>My recent projects.</p>
+          <div class="section-head-left" data-reveal-child>
+            <span class="section-num">01</span>
+            <h2 class="section-title">Work</h2>
+          </div>
+          <p class="section-blurb" data-reveal-child>
+            Selected systems & full-stack projects
+          </p>
         </header>
 
-        <ol class="work-list">
-          <li class="entry entry--featured reveal" data-reveal>
-            <div class="entry-row" data-reveal-child>
-              <span class="entry-year">Nov 2026</span>
-              <h3 class="entry-title">kettle</h3>
+        <ol class="work-grid">
+          <li class="work-card reveal" data-reveal>
+            <div class="card-top" data-reveal-child>
+              <h3 class="card-title">kettle</h3>
+              <a
+                class="card-link"
+                href="https://github.com/emataa/kettle"
+                target="_blank"
+                rel="noopener"
+                >GitHub ↗</a
+              >
             </div>
-            <figure class="entry-figure" data-reveal-child>
-              <a
-                href="https://github.com/emataa/kettle"
-                target="_blank"
-                rel="noopener"
-                aria-label="Open kettle on GitHub"
-              >
-                <img
-                  src="assets/kettle.png"
-                  alt="kettle running Space Invaders"
-                  loading="lazy"
-                />
-              </a>
-            </figure>
-            <p class="entry-lede" data-reveal-child>
-              A CHIP-8 emulator written in Rust. A core library handles the CPU,
-              memory, timers, and display buffer, and a separate SDL2 frontend
-              handles the window, keyboard input, and sound. It implements the
-              full instruction set, 60Hz timers, and a square-wave beep, with
-              the 64x32 display scaled 15x. It runs ROMs like Space Invaders at
-              about 600 instructions per second.
+            <p class="card-body" data-reveal-child>
+              A cycle-accurate CHIP-8 interpreter and emulator written from
+              scratch in Rust. A core library handles the CPU, memory, 60Hz
+              timers, and display buffer, and a separate SDL2 frontend handles
+              the 15x-scaled window, keyboard input, and square-wave audio.
             </p>
-
-            <p class="entry-tech" data-reveal-child>Built with Rust, SDL2.</p>
-            <p class="entry-links" data-reveal-child>
-              <a
-                href="https://github.com/emataa/kettle"
-                target="_blank"
-                rel="noopener"
-                >Source</a
-              >
-            </p>
+            <p class="card-tech" data-reveal-child>Rust · SDL2 · Systems</p>
           </li>
-          <li class="entry entry--featured reveal" data-reveal>
-            <div class="entry-row" data-reveal-child>
-              <span class="entry-year">Oct 2026</span>
-              <h3 class="entry-title">Cubic</h3>
-            </div>
-            <figure class="entry-figure" data-reveal-child>
+
+          <li class="work-card reveal" data-reveal>
+            <div class="card-top" data-reveal-child>
+              <h3 class="card-title">Cubic</h3>
               <a
+                class="card-link"
                 href="https://playcubic.tech/"
                 target="_blank"
                 rel="noopener"
-                aria-label="Open Cubic on GitHub"
+                >Live / Source ↗</a
               >
-                <img
-                  src="assets/cubic-title.png"
-                  alt="Cubic game title screen"
-                  loading="lazy"
-                />
-              </a>
-            </figure>
-            <p class="entry-lede" data-reveal-child>
-              Won the Best Design award at StormHacks 2026, Western Canada's
-              biggest hackathon. Cubic is a two-player co-op game where one
-              player walks on the outside of a cube and the other is trapped
-              inside. You solve puzzles across all 6 faces together to reunite
-              with each other. The game features proximity voice chat for
-              communication and an AI partner for solo play.
-            </p>
-
-            <p class="entry-tech" data-reveal-child>
-              Built with TypeScript, Node.js, Phaser, Vite, WebRTC, Gemini,
-              ElevenLabs.
-            </p>
-            <p class="entry-links" data-reveal-child>
-              <a
-                href="https://github.com/ltanafranca1004/Cubic"
-                target="_blank"
-                rel="noopener"
-                >Source</a
-              >
-            </p>
-          </li>
-          <li class="entry entry--featured reveal" data-reveal>
-            <div class="entry-row" data-reveal-child>
-              <span class="entry-year">Sep 2026</span>
-              <h3 class="entry-title">Cellar</h3>
             </div>
-            <figure class="entry-figure" data-reveal-child>
-              <a
-                href="https://github.com/emataa/cellar"
-                target="_blank"
-                rel="noopener"
-                aria-label="Open Cellar on GitHub"
-              >
-                <img
-                  src="assets/cellar.png"
-                  alt="Cellar CLI showing the help banner and available commands"
-                  loading="lazy"
-                />
-              </a>
-            </figure>
-            <p class="entry-lede" data-reveal-child>
-              A CLI password manager. Cellar generates and stores a unique
-              password per entry in a single encrypted file, so only one master
-              password needs to be remembered. Everything is encrypted with
-              Argon2id (key derivation) and AES-256-GCM (authenticated
-              encryption), all in one file on disk.
+            <div class="card-award" data-reveal-child>
+              ★ Winner — Best Design @ StormHacks 2026
+            </div>
+            <p class="card-body" data-reveal-child>
+              Two-player co-op puzzle game where one player walks on the outside
+              of a cube and the other is trapped inside. Solve puzzles across
+              all 6 faces together using proximity voice chat and an AI partner
+              for solo play.
             </p>
-            <p class="entry-tech" data-reveal-child>Built with Python.</p>
-            <p class="entry-links" data-reveal-child>
-              <a
-                href="https://github.com/emataa/cellar"
-                target="_blank"
-                rel="noopener"
-                >Source</a
-              >
+            <p class="card-tech" data-reveal-child>
+              TypeScript · Node.js · Phaser · WebRTC · Gemini
             </p>
           </li>
 
-          <li class="entry reveal" data-reveal>
-            <div class="entry-row" data-reveal-child>
-              <span class="entry-year">Apr 2026</span>
-              <h3 class="entry-title">Connect Four</h3>
-            </div>
-            <p class="entry-lede" data-reveal-child>
-              A two-player Connect Four game that communicates over a raw TCP
-              socket. A server binds to localhost, accepts two clients on
-              dedicated threads, and broadcasts board updates back to each
-              player. Game state, move validation, and win detection all live
-              server-side; the client is a tkinter GUI driven by incoming JSON
-              messages.
-            </p>
-            <p class="entry-tech" data-reveal-child>Built with Python.</p>
-            <p class="entry-links" data-reveal-child>
+          <li class="work-card reveal" data-reveal>
+            <div class="card-top" data-reveal-child>
+              <h3 class="card-title">Cellar</h3>
               <a
+                class="card-link"
+                href="https://github.com/emataa/cellar"
+                target="_blank"
+                rel="noopener"
+                >GitHub ↗</a
+              >
+            </div>
+            <p class="card-body" data-reveal-child>
+              A CLI password manager that generates and stores a unique password
+              per entry in a single encrypted file on disk. Everything is
+              protected with Argon2id key derivation and AES-256-GCM
+              authenticated encryption.
+            </p>
+            <p class="card-tech" data-reveal-child>
+              Python · Argon2id · AES-256-GCM · CLI
+            </p>
+          </li>
+
+          <li class="work-card reveal" data-reveal>
+            <div class="card-top" data-reveal-child>
+              <h3 class="card-title">Connect Four</h3>
+              <a
+                class="card-link"
                 href="https://github.com/emataa/CMPT371_A3_ConnectFour/tree/main"
                 target="_blank"
                 rel="noopener"
-                >Source</a
+                >GitHub ↗</a
               >
+            </div>
+            <p class="card-body" data-reveal-child>
+              A two-player Connect Four game communicating over a raw TCP
+              socket. A multithreaded server manages game state, move
+              validation, and win detection while broadcasting JSON updates to
+              tkinter GUI clients.
+            </p>
+            <p class="card-tech" data-reveal-child>
+              Python · Raw TCP Sockets · Multithreading · tkinter
             </p>
           </li>
 
-          <li class="entry reveal" data-reveal>
-            <div class="entry-row" data-reveal-child>
-              <span class="entry-year">Oct 2025</span>
-              <h3 class="entry-title">Turtle Trips</h3>
-            </div>
-            <figure class="entry-figure" data-reveal-child>
+          <li class="work-card reveal" data-reveal>
+            <div class="card-top" data-reveal-child>
+              <h3 class="card-title">Turtle Trips</h3>
               <a
+                class="card-link"
                 href="https://github.com/ltanafranca1004/Turtle-Trips-AI"
                 target="_blank"
                 rel="noopener"
-                aria-label="Open Turtle Trips on GitHub"
+                >GitHub ↗</a
               >
-                <img
-                  src="assets/tta.jpg"
-                  alt="Turtle Trips landing page prompting 'Where would you like to go?'"
-                  loading="lazy"
-                />
-              </a>
-            </figure>
-            <p class="entry-lede" data-reveal-child>
+            </div>
+            <p class="card-body" data-reveal-child>
               An AI-powered travel planner built at StormHacks 2025. Users enter
-              a destination and the app generates a trip plan using Google
-              Gemini, with Google Maps handling the underlying places,
-              directions, and geocoding.
+              a destination and the app generates a custom itinerary using
+              Google Gemini, with Google Maps handling places, directions, and
+              geocoding.
             </p>
-            <p class="entry-tech" data-reveal-child>
-              Built with Python, Flask, HTML/CSS/JS, Gemini API, Google Maps.
-            </p>
-            <p class="entry-links" data-reveal-child>
-              <a
-                href="https://github.com/ltanafranca1004/Turtle-Trips-AI"
-                target="_blank"
-                rel="noopener"
-                >Source</a
-              >
+            <p class="card-tech" data-reveal-child>
+              Python · Flask · Gemini API · Google Maps
             </p>
           </li>
 
-          <li class="entry reveal" data-reveal>
-            <div class="entry-row" data-reveal-child>
-              <span class="entry-year">Jul 2024</span>
-              <h3 class="entry-title">MarketMimic</h3>
+          <li class="work-card reveal" data-reveal>
+            <div class="card-top" data-reveal-child>
+              <h3 class="card-title">MarketMimic</h3>
+              <a
+                class="card-link"
+                href="https://github.com/munir-nuggets/CMPT276-project"
+                target="_blank"
+                rel="noopener"
+                >GitHub ↗</a
+              >
             </div>
-            <figure class="entry-figure" data-reveal-child>
-              <a
-                href="https://github.com/munir-nuggets/CMPT276-project"
-                target="_blank"
-                rel="noopener"
-                aria-label="Open MarketMimic on GitHub"
-              >
-                <img
-                  src="assets/mm.png"
-                  alt="MarketMimic dashboard showing a watchlist and interactive price chart"
-                  loading="lazy"
-                />
-              </a>
-            </figure>
-            <p class="entry-lede" data-reveal-child>
+            <p class="card-body" data-reveal-child>
               A web-based stock trading simulator for first-time investors.
-              Users track up to 50 tickers on a custom watchlist, view
-              interactive historical charts, and place simulated trades with
-              virtual currency, a low-risk way to practice before trading with
-              real money.
+              Track up to 50 tickers on a custom watchlist, view interactive
+              historical price charts, and place simulated trades with virtual
+              currency.
             </p>
-            <p class="entry-tech" data-reveal-child>
-              Built with Java, HTML/CSS/JS, Maven, Docker.
-            </p>
-            <p class="entry-links" data-reveal-child>
-              <a
-                href="https://github.com/munir-nuggets/CMPT276-project"
-                target="_blank"
-                rel="noopener"
-                >Source</a
-              >
+            <p class="card-tech" data-reveal-child>
+              Java · Spring · Maven · Docker · JS
             </p>
           </li>
         </ol>
       </section>
 
-      <!-- ============ EXPERIENCE ============ -->
-      <section id="experience" class="section experience-section">
+      <!-- ============ 02 EXPERIENCE ============ -->
+      <section id="experience" class="section">
         <header class="section-head reveal" data-reveal>
-          <span class="section-num" data-reveal-child>02</span>
-          <h2 class="section-title" data-reveal-child>Experience</h2>
+          <div class="section-head-left" data-reveal-child>
+            <span class="section-num">02</span>
+            <h2 class="section-title">Experience</h2>
+          </div>
+          <p class="section-blurb" data-reveal-child>
+            QA engineering & teaching
+          </p>
         </header>
 
         <ol class="experience-list">
-          <li class="entry reveal" data-reveal>
-            <span
-              class="entry-year entry-year--long entry-year--block"
-              data-reveal-child
-              >Jun 2025 - Present</span
-            >
-            <h3 class="entry-title" data-reveal-child>
-              Classroom Facilitator / Curriculum Developer
-              <span class="entry-org">STEMA Learning - Surrey, BC</span>
-            </h3>
+          <li class="exp-card reveal" data-reveal>
+            <div class="exp-header" data-reveal-child>
+              <div>
+                <h3 class="entry-title">QA Developer Intern</h3>
+                <span class="entry-org">Big Bazzaar — Remote</span>
+              </div>
+              <span class="entry-year">Oct 2026 – Present</span>
+            </div>
+            <ul class="entry-bullets" data-reveal-child>
+              <li>
+                Audited the front end of a React and Vite marketplace, finding
+                15 dependency vulnerabilities, 0 automated tests, and 40 pop-up
+                error alerts.
+              </li>
+              <li>
+                Ranked each issue by business impact and wrote a plain-language
+                audit for non-technical stakeholders, linking technical risks to
+                revenue and customer trust.
+              </li>
+              <li>
+                Developing a headless E2E test suite in Python (pytest,
+                Selenium) against a separate Supabase test project and Optty
+                payment sandbox, adding data-testid attributes and tests for
+                cart stock checks, /admin route protection, and blocked payment
+                widget scripts.
+              </li>
+            </ul>
+          </li>
+
+          <li class="exp-card reveal" data-reveal>
+            <div class="exp-header" data-reveal-child>
+              <div>
+                <h3 class="entry-title">
+                  Classroom Facilitator / Curriculum Developer
+                </h3>
+                <span class="entry-org">STEMA Learning — Surrey, BC</span>
+              </div>
+              <span class="entry-year">Jun 2025 – Present</span>
+            </div>
             <ul class="entry-bullets" data-reveal-child>
               <li>
                 Designed and delivered technical curriculum for 30+ students
-                ages 4-13, translating programming and engineering fundamentals
+                ages 4–13, translating programming and engineering fundamentals
                 into structured, age-appropriate lessons.
               </li>
               <li>
@@ -318,7 +451,7 @@
                 logic, and variables.
               </li>
               <li>
-                Engineered hands-on engineering lessons using U20 Pro and VEX GO
+                Engineered hands-on robotics lessons using U20 Pro and VEX GO
                 kits, focusing on mechanical assembly, structural stability, and
                 sensor integration.
               </li>
@@ -327,68 +460,76 @@
         </ol>
       </section>
 
-      <!-- ============ ABOUT ============ -->
-      <section id="about" class="section about-section">
+      <!-- ============ 03 ABOUT ============ -->
+      <section id="about" class="section">
         <header class="section-head reveal" data-reveal>
-          <span class="section-num" data-reveal-child>03</span>
-          <h2 class="section-title" data-reveal-child>About</h2>
+          <div class="section-head-left" data-reveal-child>
+            <span class="section-num">03</span>
+            <h2 class="section-title">About</h2>
+          </div>
+          <p class="section-blurb" data-reveal-child>Background & interests</p>
         </header>
         <div class="prose reveal" data-reveal>
           <p data-reveal-child>
-            I'm a fourth-year computer science student at Simon Fraser
-            University. I focus my studies on low-level systems, operating
-            systems, compilers, and the tools underneath everything else. I'm
-            also into cybersecurity, I enjoy learning about the vulnerabilites
-            in code that come from using low-level languages like C, and
-            learning about how weak design choices can lead to exploits.
+            I'm a fourth-year CS student at Simon Fraser University who enjoys
+            figuring out how software works under the hood, especially operating
+            systems and low-level code. That drew me into my interest in
+            cybersecurity, specifically reverse engineering and binary
+            exploitation. Outside of class, I play a lot of CTFs and wargames
+            like OverTheWire and pwnable.kr, digging into how small bugs in C or
+            weak design choices turn into real exploits.
           </p>
 
           <p data-reveal-child>
-            Outside of the tech space, I coach youth basketball and get into
-            pickup runs when I can. I've been weight lifting for 4+ years now.
-            Occasionaly, I spend weekends hiking or backpacking. I've got a cat
-            named Lucky at home, and no matter where I go, I've already got the
-            food spots figured out.
+            Even in my downtime, I like keeping up with the latest news in tech
+            and cybersecurity. Away from my desk, I coach youth basketball and
+            get into pickup runs whenever I can. I've been lifting for over four
+            years, and on weekends I like heading out to hike or backpack. At
+            home I've got my cat, Lucky, and wherever I go, I usually already
+            have the food spots figured out.
           </p>
         </div>
       </section>
 
-      <!-- ============ CONTACT ============ -->
-      <section id="contact" class="section contact-section">
+      <!-- ============ 04 CONTACT ============ -->
+      <section id="contact" class="section">
         <header class="section-head reveal" data-reveal>
-          <span class="section-num" data-reveal-child>04</span>
-          <h2 class="section-title" data-reveal-child>Contact</h2>
+          <div class="section-head-left" data-reveal-child>
+            <span class="section-num">04</span>
+            <h2 class="section-title">Contact</h2>
+          </div>
+          <p class="section-blurb" data-reveal-child>Get in touch</p>
         </header>
-        <p class="contact reveal" data-reveal>
-          <span class="contact-line" data-reveal-child>
-            <a href="mailto:kenlemata@gmail.com">kenlemata@gmail.com</a>
-          </span>
-          <span class="contact-line" data-reveal-child>
+        <div class="contact-card reveal" data-reveal>
+          <p class="contact-line" data-reveal-child>
+            <a href="mailto:kea31@sfu.ca">kea31@sfu.ca</a>
+          </p>
+          <p class="contact-links" data-reveal-child>
             <a
-              href="assets/Kenneth Emata Resume.pdf"
+              href="assets/kenneth-emata-resume.pdf"
               target="_blank"
               rel="noopener"
-              >Resume</a
+              >Resume ↗</a
             >
             <span class="sep">·</span>
             <a href="https://github.com/emataa" target="_blank" rel="noopener"
-              >GitHub</a
+              >GitHub ↗</a
             >
             <span class="sep">·</span>
             <a
               href="https://www.linkedin.com/in/kenemata/"
               target="_blank"
               rel="noopener"
-              >LinkedIn</a
+              >LinkedIn ↗</a
             >
-          </span>
-        </p>
+          </p>
+        </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container">
-        <p>© <span id="year"></span> ken emata</p>
+        <p>© <span id="year"></span> Ken Emata</p>
       </div>
     </footer>
 
